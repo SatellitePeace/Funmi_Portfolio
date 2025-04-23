@@ -25,7 +25,6 @@ navigationLinks.forEach(link => {
     }
   });
 });
-
 // ///////////////////PORTFOLIO SECTION LINKS
 const shareButtons = document.querySelectorAll('.share-button');
 
@@ -63,19 +62,24 @@ window.addEventListener('scroll', function(){
   menu.classList.remove('bi-x-lg') 
   header.classList.remove('active')
 })
-  
+navigationLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('bi-x-lg');
+    menu.classList.add('bi'); // Reset icon
+    header.classList.remove('active'); // Close navbar
+  });
+});
   // COPYRIGHT DATE
   const copyDate = document.querySelector("small");
   copyDate.innerText = new Date().getFullYear()
-
-//   Types Animation
-  const types = new Typed(".multiple-text", {
-    strings: [
-      "Product Manager",
-      "Product Owner",
-    ],
-    typeSpeed: 100,
-    backSpeed: 100,
-    backDelay: 1000,
-    loop: true,
-  });
+// // Type animation
+const typing = new Typed(".multiple-text", {
+  strings: [
+    "Product Manager",
+    "Scrum Master",
+  ],
+  typeSpeed: 100,
+  backSpeed: 100,
+  backDelay: 1000,
+  loop: true,
+}).go();

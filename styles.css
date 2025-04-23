@@ -14,7 +14,7 @@
 :root {
   --bg-color: rgb(31, 36, 45);
   --second-color: rgb(50, 57, 70);
-  --text-color: #fff;
+  --text-color: whitesmoke;
   --main-color: #445D48;
   /* --main-color: goldenrod; */
   --orange-soda: #ff5a3d;
@@ -76,6 +76,17 @@ body {
   /* background-color: bisque; */
   background-color: var(--second-color);
 }
+body::-webkit-scrollbar {
+  width: 1rem; 
+}
+body::-webkit-scrollbar-track {
+  background: var(--second-color);
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 10px;
+}
+
 h1,
 h2,
 h3,
@@ -119,7 +130,7 @@ img {
   background-color: var(--main-color);
   font-size: 1.6rem;
   font-weight: 600;
-  color: var(--second-color);
+  color: var(--text-color);
   letter-spacing: .15rem;
   cursor: pointer;
   transition:var(--transition-1);
@@ -145,10 +156,12 @@ span {
   display: block;
   animation: fade 0.5s ease backwards;
 }
-
+/* .typed-cursor {
+  font-size: 5.5rem;
+  color:rgb(87, 87, 87);
+} */
 .navbar a.active {
  color: var(--main-color);
-  /* color: white; */
 }
 
 @keyframes fade {
@@ -179,9 +192,9 @@ header .logo{
   font-weight: 600;
   letter-spacing: .2rem;
 }
-header .logo span{
+/* header .logo span{
   color: var(--main-color);
-}
+} */
 header .navbar a {
 display: block;
 font-size: var(--fs-2);
@@ -231,6 +244,7 @@ header .footer small{
 .about-home{
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: var(--flex-gap);
 
@@ -242,6 +256,9 @@ header .footer small{
 .about-home .content{
   flex: 1 1 40rem;
 }
+.about-home .content a{
+  margin-top: 2.5rem;
+}
 .about-home .intro{
   font-size: var(--fs-2);
   color: var(--main-color);
@@ -249,23 +266,25 @@ header .footer small{
 }
 .about-home h1{
   font-size: 4.5rem;
-  color: var(--bg-color);
+  color: var(--text-color);
   text-transform: uppercase;
 }
-.about-home h1 span{
+/* .about-home h1 span{
   color: var(--main-color);
-}
+} */
 .about-home .info{
   font-size: 2.5rem;
-  color: var(--bg-color);
+  color: var(--text-color);
 }
 .about-home .info-text{
-  color: var(--bg-color);
+  color: var(--text-color);
   font-size: var(--fs-16);
   font-weight: var(--fw-light);
 }
 .about .row-1{
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: var(--flex-gap);
   padding-bottom: 2rem;
@@ -285,11 +304,11 @@ box-shadow: var(--shadow);
   flex: 1 1 50rem;
 }
 .about .row-1 .content h3{
-  color: var(--bg-color);
+  color: var(--text-color);
   font-size: 3.5rem;
 }
 .about .row-1 .content p{
-color: var(--bg-color);
+color: var(--text-color);
 font-size: var(--fs-17);
 padding: .5rem 0;
 }
@@ -312,13 +331,14 @@ padding: .5rem 0;
   flex:  1 1 25rem;
   text-align: center;
   padding: 2rem;
-  background-color: var(--text-color);
+  /* background-color: var(--text-color); */
+  background-color: var(--bg-color);
   border-radius: .5rem;
   box-shadow: var(--shadow);
   /* max-width: 30rem; */
 }
 .services .box-container .box > *{
-  color: var(--bg-color);
+  color: var(--text-color);
 }
 .services .box-container .box i{
  height: 6rem;
@@ -348,8 +368,8 @@ padding: .5rem 0;
 .swiper-slide {
   text-align: center;
   font-size: var(--fs-16);
-  background:var(--text-color);
-  color: var(--bg-color);
+  background:var(--bg-color);
+  color: var(--text-color);
   border-radius: .5rem;
   padding: 2rem;
   margin-bottom: 4rem;
@@ -396,13 +416,13 @@ padding: .5rem 0;
 
 .resume-row .wrapper :is(.edu, .exp) {
   margin-bottom: 8rem;
-  color: var(--bg-color);
+  color: var(--main-color);
   font-size: var(--fs-16);
 }
 
 .resume-row h2 {
   margin-bottom: 2rem;
-  color: var(--bg-color);
+  color: var(--main-color);
   font-size: var(--fs-2);
 }
 .grid-item {
@@ -425,18 +445,18 @@ padding: .5rem 0;
 .resume-row .grid-item .year {
   text-align: right;
   font-size: var(--fs-16);
-  color: var(--bg-color);
+  color: var(--main-color);
 }
 
 .resume-row .grid-item .company {
   text-align: right;
   font-size: var(--fs-16);
-  color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .resume-row .grid-item :is(.edu-desc, .exp-desc) {
   font-size: var(--fs-14);
-  color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .resume-row .grid-item .divider {
@@ -477,13 +497,13 @@ padding: .5rem 0;
   margin-bottom: .5rem;
 }
 .resume-row .progress-detail .progress-name{
-  color: var(--bg-color);
+  color: var(--text-color);
   font-size: 1.4rem;
 }
 .resume-row .progress-detail .progress-percent {
   font-size: var(--fs-14);
   font-weight: var(--fw-light);
-  color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .resume-row .progress-bar {
@@ -512,8 +532,8 @@ padding: .5rem 0;
   height: 25rem;
   position: relative;
   overflow: hidden;
-  background: var(--text-color);
-  border: 1rem solid var(--text-color);
+  background: var(--bg-color);
+  border: 1rem solid var(--main-color);
   border-radius: .5rem;
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
 }
@@ -521,14 +541,12 @@ padding: .5rem 0;
   height: 80%;
   width: 80%;
   object-fit: cover;
-  /* position: relative;
-  z-index: 1; */
 }
 .portfolio .box-container h3{
   position: absolute;
   bottom: .5rem;
   left: 1rem;
-  color: var(--bg-color);
+  color: var(--text-color);
   text-transform: uppercase;
 }
 .portfolio .box-container .icons{
@@ -565,14 +583,11 @@ color: var(--text-color);
 }
 .blog-list li{
   flex: 1 1 25rem;
-  background-color: var(--text-color);
+  background-color: var(--bg-color);
   border-radius: .5rem;
   min-height: inherit;
   box-shadow: var(--shadow); 
 }
-/* .blog-card { 
-  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2); 
-} */
 
 .blog-card .card-banner {
   overflow: hidden;
@@ -582,7 +597,7 @@ color: var(--text-color);
 .blog-card .card-banner img {
   height: 100%;
   object-fit: cover;
-  transition: var(--flex-gap);
+  transition: var(--transition-1);
   border-radius: .5rem .5rem 0 0;
 }
 
@@ -611,17 +626,14 @@ color: var(--text-color);
   transition: var(--transition-1);
 }
 
-.blog-card :is(.card-meta-link, .publish-date) i { 
-  color: var(--main-color); 
-}
-
 .blog-card .card-meta-link:is(:hover, :focus) { 
   color: var(--main-color); 
 }
 
 .blog-title a{
-  color: var(--bg-color);
-  font-size: var(--fs-16);
+  color: var(--text-color);
+  font-size: var(--fs-18);
+  line-height: 2rem;
   font-weight: var(--fw-600);
 }
 
@@ -631,7 +643,7 @@ color: var(--text-color);
 
 .blog-content-bottom {
   padding-top: 2rem;
-  border-top: 1px solid hsla(0, 0%, 0%, 0.1);
+  border-top: 1px solid var(--main-color);
   margin-top: 2rem;
   display: flex;
   justify-content: space-between;
@@ -655,8 +667,8 @@ color: var(--text-color);
   flex: 1 1 25rem;
   text-align: center;
   padding: 2rem;
-  background-color: var(--text-color);
-  color: var(--second-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
   border-radius: .5rem;
 }
@@ -683,9 +695,13 @@ color: var(--text-color);
 }
 .contact .row form{
   flex: 1 1 50rem;
-  background-color: var(--text-color);
+  background-color: var(--bg-color);
   padding: 0 2rem;
   box-shadow:  var(--shadow);
+}
+.contact .row form input, 
+.contact .row form textarea{
+  background-color: var(--bg-color);
 }
 .contact .row .map{
   flex: 1 1 25rem;
@@ -697,7 +713,7 @@ color: var(--text-color);
 .contact .row form .box,
 .contact .row form textarea{
   width: 100%;
-  border-bottom: .1rem solid var(--second-color);
+  border-bottom: .1rem solid var(--main-color);
   color: var(--bg-color);
   text-transform: none;
   font-size: var(--fs-17);
@@ -727,6 +743,7 @@ color: var(--text-color);
     display: initial;
   }
   header{
+    transition: var(--transition-1);
     left: -120%;
   }
   header.active{
