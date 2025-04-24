@@ -83,7 +83,7 @@ navigationLinks.forEach(link => {
 // // Type animation
 const typing = new Typed(".multiple-text", {
   strings: [
-    "Product Manager",
+    "Project Manager",
     "Scrum Master",
   ],
   typeSpeed: 100,

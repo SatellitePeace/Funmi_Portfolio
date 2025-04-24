@@ -486,7 +486,8 @@ padding: .5rem 0;
   width: 35%;
 }
 
-.resume-row .design-skill {
+.resume-row .design-skill,
+.resume-row .coding-skill {
   margin-bottom: 4rem;
 }
 
