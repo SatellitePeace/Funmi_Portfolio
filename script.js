@@ -47,7 +47,14 @@ shareButtons.forEach(button => {
     }
   });
 });
+// CONTACT
+const form = document.getElementById('form');
 
+form.addEventListener('submit', () => {
+  setTimeout(() => {
+    form.reset();
+  }, 500);
+});
 // Menu Hamburger
 const menu = document.getElementById('menu')
 const header = document.querySelector('header')
@@ -69,6 +76,7 @@ navigationLinks.forEach(link => {
     header.classList.remove('active'); // Close navbar
   });
 });
+
   // COPYRIGHT DATE
   const copyDate = document.querySelector("small");
   copyDate.innerText = new Date().getFullYear()
