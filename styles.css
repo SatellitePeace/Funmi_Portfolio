@@ -632,13 +632,20 @@ color: var(--text-color);
 .blog-card .card-meta-link:is(:hover, :focus) { 
   color: var(--main-color); 
 }
-
+.blog-title{
+  font-size: var(--fs-18);
+}
 .blog-title a{
   color: var(--text-color);
   font-size: var(--fs-18);
   line-height: 2rem;
   font-weight: var(--fw-600);
+  cursor: pointer;
 }
+/* .blog-card .blog-content{
+  background-color: brown;
+
+} */
 
 .blog-card .blog-title:is(:hover, :focus) { 
   color: var(--main-color); 

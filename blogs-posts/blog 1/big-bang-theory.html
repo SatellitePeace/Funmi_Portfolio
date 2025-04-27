@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Big Bang Theory</title>
+    <title>When Startups Scale Too Fast: A Product Strategy Lesson via The Big Bang Theory</title>
+     <!-- favicon -->
+     <link rel="shortcut icon" href="/asstets/images/funmi headshot.jpg" type="image/x-icon">
         <!-- Bootstrap icons -->
         <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
       />
       <!-- custom css -->
-    <link rel="stylesheet" href="./big-bang.css">
+    <link rel="stylesheet" href="/blogs-posts/blogs.css">
 </head>
 <body>
-    <main class="article-post">
-        <a href="/index.html" class="btn"><i class="bi bi-chevron-double-left"></i> Back Home</a>
+    <main class="article-post"  data-post-id="post1">
+        <a href="/index.html" class="btn back"><i class="bi bi-chevron-double-left"></i> Back Home</a>
        <h1 class="subheading">
         <span>When Startups Scale Too Fast:</span>  A Product Strategy Lesson via The Big Bang Theory
        </h1>
@@ -77,9 +79,26 @@
                 If you are a product person like I am, then you will surely find this episode 
                 very interesting, and You’ll see why I assigned these roles to each of them. 🤣🤣😅
               </p>
-             <button class="share-button btn">
-                <i class="bi bi-share"></i>   Share Post
-             </button>
+              <footer class="footer">
+                <div class="footer-buttons">
+                  <button class="share-button btn">
+                    <i class="bi bi-share"></i>   Share Post
+                 </button>
+                 <div class="like-section">
+                  <button id="likeButton" class="like-button btn">👍 Like (<span id="likeCount" class="like-count">0</span>)</button>
+                </div>
+                </div>
+    
+            
+                <div class="comment-section">
+                  <h3>Comments</h3>
+                  <form id="commentForm" class="comment-form">
+                    <input type="text" id="commentInput" class="comment-input" placeholder="Write a comment..." required>
+                    <button type="submit" class="btn">Post</button>
+                  </form>
+                  <ul id="commentList" class="comment-list"></ul>
+                </div>
+               </footer>
     </main>
     <script src="/script.js"></script>
 </body>

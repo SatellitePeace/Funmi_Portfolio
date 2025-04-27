@@ -25,7 +25,18 @@ navigationLinks.forEach(link => {
     }
   });
 });
-// ///////////////////PORTFOLIO SECTION LINKS
+// ////////////////////// BLOG POST FUNCTIONALITIES (ECLIPS, LIKE, SHARE,COMMENT) /////////////////////////////////////
+// truncate blog title
+const titles = document.querySelectorAll('.blog-title');
+
+titles.forEach(title => {
+  const maxLength = 100; // Set maximum characters before truncating
+  if (title.textContent.length > maxLength) {
+    title.textContent = title.textContent.slice(0, maxLength) + '...';
+  }
+});
+
+// Share button
 const shareButtons = document.querySelectorAll('.share-button');
 
 shareButtons.forEach(button => {
@@ -47,6 +58,56 @@ shareButtons.forEach(button => {
     }
   });
 });
+// Like and Comment
+// Find all blog posts
+const blogPosts = document.querySelectorAll('.article-post');
+
+blogPosts.forEach(post => {
+  const postId = post.getAttribute('data-post-id');
+
+  // Get elements inside this post
+  const likeButton = post.querySelector('.like-button');
+  const likeCount = post.querySelector('.like-count');
+  const commentForm = post.querySelector('.comment-form');
+  const commentInput = post.querySelector('.comment-input');
+  const commentList = post.querySelector('.comment-list');
+
+  // Load likes and comments for this post
+  let likes = localStorage.getItem(`${postId}_likes`) ? parseInt(localStorage.getItem(`${postId}_likes`)) : 0;
+  likeCount.textContent = likes;
+
+  let comments = JSON.parse(localStorage.getItem(`${postId}_comments`)) || [];
+  comments.forEach(comment => {
+    addCommentToList(commentList, comment);
+  });
+
+  // Like button functionality
+  likeButton.addEventListener('click', () => {
+    likes++;
+    localStorage.setItem(`${postId}_likes`, likes);
+    likeCount.textContent = likes;
+  });
+
+  // Comment form functionality
+  commentForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const commentText = commentInput.value.trim();
+    if (commentText !== '') {
+      comments.push(commentText);
+      localStorage.setItem(`${postId}_comments`, JSON.stringify(comments));
+      addCommentToList(commentList, commentText);
+      commentInput.value = '';
+    }
+  });
+});
+
+// Function to add a comment to a specific list
+function addCommentToList(list, comment) {
+  const li = document.createElement('li');
+  li.textContent = comment;
+  list.appendChild(li);
+}
+
 // CONTACT
 const form = document.getElementById('form');
 
