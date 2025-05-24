@@ -144,8 +144,8 @@ navigationLinks.forEach(link => {
 // // Type animation
 const typing = new Typed(".multiple-text", {
   strings: [
-    "Project Manager",
-    "Scrum Master",
+    "Lead Product Manager",
+    "Certified Scrum Master",
   ],
   typeSpeed: 100,
   backSpeed: 100,
