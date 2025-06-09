@@ -557,8 +557,9 @@ padding: .5rem 0;
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
 }
 .portfolio .box-container .box img{
-  height: 80%;
-  width: 80%;
+  min-height: 80%;
+  /* height: 80%;
+  width: 80%; */
   object-fit: cover;
 }
 .portfolio .box-container h3{
@@ -588,7 +589,7 @@ font-size: 1.1rem;
   display: block;
   height: 4rem;
   width: 4rem;
-  background-color: var(--second-color);
+  background-color: var(--main-color);
   color: var(--second-text-color);
   font-size: 1.6rem;
   font-weight: bolder;
@@ -599,7 +600,7 @@ font-size: 1.1rem;
   transition: var(--transition-1);
 }
 .portfolio .box-container .icons a:hover{
-background-color: var(--main-color);
+background-color: var(--second-color);
 color: var(--second-text-color);
 }
 /* ////////////////////////////// BLOG ///////////////////////// */
@@ -662,20 +663,20 @@ color: var(--second-text-color);
 .blog-title{
   font-size: var(--fs-18);
   color: var(--second-text-color);
+  cursor: pointer;
 }
 .blog-title a{
   color: var(--second-text-color);
   font-size: var(--fs-18);
   line-height: 2rem;
   font-weight: var(--fw-600);
-  cursor: pointer;
 }
 /* .blog-card .blog-content{
   background-color: brown;
 
 } */
 
-.blog-card .blog-title:is(:hover, :focus) { 
+.blog-card .blog-title:is(:focus) { 
   color: var(--main-color); 
 }
 
